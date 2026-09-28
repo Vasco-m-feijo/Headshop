@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headshop | Tabacaria Premium</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-soft: #1b1b1b;
+      --surface: #242424;
+      --text: #f4f4f4;
+      --text-muted: #c8c8c8;
+      --accent: #6abf69;
+      --accent-dark: #4f8f4e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(180deg, #111 0%, #1c1c1c 100%);
+      border-bottom: 1px solid #2d2d2d;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(106, 191, 105, 0.2), transparent 45%);
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #0f0f0f;
+      text-decoration: none;
+      padding: 0.8rem 1.1rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      margin: 0 0 1rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      margin: 0 auto 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 760px;
+    }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .product {
+      background: var(--surface);
+      border: 1px solid #333;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .product h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contact {
+      background: var(--bg-soft);
+      border-top: 1px solid #2f2f2f;
+      border-bottom: 1px solid #2f2f2f;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid #343434;
+      border-radius: 0.8rem;
+      padding: 1rem;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.9rem;
+    }
+
+    .contact-form label {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid #3b3b3b;
+      border-radius: 0.5rem;
+      background: #1a1a1a;
+      color: var(--text);
+      padding: 0.65rem 0.75rem;
+      font: inherit;
+    }
+
+    .contact-form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 260px;
+      border: 0;
+      border-radius: 0.6rem;
+      background: #111;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0 2rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#inicio">
+        <img src="https://xyxpexbankcbwidpobzb.supabase.co/storage/v1/object/public/assets/logos/1784135289304-r2g6wg.png" alt="Logo Headshop">
+        <span>HEADSHOP</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contato">Contato</a>
+        <a href="#localizacao">Localização</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container">
+        <h1>Headshop: sua tabacaria completa em um só lugar</h1>
+        <p>
+          Produtos para fumantes de cigarro, tabaco, charuto e maconha, com atendimento especializado,
+          variedade premium e o melhor custo-benefício da região.
+        </p>
+        <a class="btn" href="#catalogo">Ver catálogo</a>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <div class="container">
+        <h2 class="section-title">Catálogo de produtos</h2>
+        <p class="section-subtitle">
+          Alguns dos itens mais procurados da Headshop. Consulte disponibilidade e promoções pelo WhatsApp.
+        </p>
+        <div class="catalog">
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1508435234994-67cfd7690509?auto=format&fit=crop&w=900&q=80" alt="Seda e piteiras para enrolar">
+            <div class="product-content">
+              <h3>Seda + Piteiras Premium</h3>
+              <span class="price">R$ 12,90</span>
+              <p>Combos com folhas ultrafinas e piteiras de papel para uma sessão mais suave.</p>
+            </div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1551854838-212c9fe6f38f?auto=format&fit=crop&w=900&q=80" alt="Dichavador metálico">
+            <div class="product-content">
+              <h3>Dichavador Metálico 4 Partes</h3>
+              <span class="price">R$ 69,90</span>
+              <p>Modelo resistente com filtro coletor, ideal para triturar tabaco e ervas com precisão.</p>
+            </div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1507914372368-b2b085b925a1?auto=format&fit=crop&w=900&q=80" alt="Charuto premium">
+            <div class="product-content">
+              <h3>Charuto Importado</h3>
+              <span class="price">R$ 39,90</span>
+              <p>Opções selecionadas com sabor marcante para apreciadores de charutos especiais.</p>
+            </div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1528821128474-27f963b062bf?auto=format&fit=crop&w=900&q=80" alt="Narguilé completo">
+            <div class="product-content">
+              <h3>Narguilé Completo</h3>
+              <span class="price">R$ 249,90</span>
+              <p>Kits prontos com vaso, rosh, mangueira e acessórios para quem busca estilo e desempenho.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container">
+        <h2 class="section-title">Contato e localização</h2>
+        <p class="section-subtitle">
+          Fale com a Headshop para encomendas, dúvidas e indicações dos melhores produtos para o seu perfil.
+        </p>
+        <div class="contact-grid">
+          <article class="card">
+            <h3>Entre em contato</h3>
+            <p><strong>WhatsApp:</strong> atendimento rápido para pedidos e dúvidas.</p>
+            <p><strong>Endereço:</strong> Consulte no mapa abaixo e trace sua rota em poucos cliques.</p>
+            <form class="contact-form" action="#" method="post">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Quero saber sobre..." required></textarea>
+              <button class="btn" type="submit">Enviar contato</button>
+            </form>
+          </article>
+
+          <article class="card" id="localizacao">
+            <h3>Como chegar</h3>
+            <p><a href="https://maps.app.goo.gl/aY55U6YmTaZy4EGw9" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a></p>
+            <iframe src="https://maps.app.goo.gl/aY55U6YmTaZy4EGw9" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização da Headshop no mapa"></iframe>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year">2026</span> Headshop - Tabacaria e Acessórios.
+    </div>
+  </footer>
+</body>
+</html>
